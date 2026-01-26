@@ -49,7 +49,7 @@ function draw(currentTime) {
     lastTime = currentTime;
     ctx.fillStyle = "black";
     ctx.fillRect(0, 0, c.width, c.height);
-    ctx.font = fontSize + "px arial";
+    ctx.font = fontSize + "px 'Cascadia Code', 'Segoe UI Mono', 'Roboto Mono', 'Source Code Pro', 'Menlo', 'Consolas', monospace";
     hue += 3;
     for (let i = 0; i < drops.length; i++) {
         accumulators[i] += speeds[i];
