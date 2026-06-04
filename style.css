@@ -202,19 +202,3 @@ body, html {
     background: rgba(255, 0, 0, 0.05);
     color: #888;
 }
-
-.status-dot {
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    background-color: #ff0000;
-    border-radius: 50%;
-    margin-right: 8px;
-    box-shadow: 0 0 8px #ff0000;
-    animation: blink 1.5s infinite;
-}
-
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-}
