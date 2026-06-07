@@ -67,14 +67,13 @@ body, html {
     width: 100%;
     border-radius: 8px; 
     padding: 6px;
-    padding-bottom: 42px; /* Increased to push the chin down, adding space ABOVE the text */
-    
-    background: rgba(15, 15, 15, 0.4);
+    padding-bottom: 42px;
+    background: transparent;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5), inset 0 0 24px rgba(0,0,0,0.8);
     z-index: 2;
 }
 
@@ -96,28 +95,26 @@ body, html {
     filter: contrast(1.05);
 }
 
-/* Hardware Logo Overlay */
 .brand-name {
     position: absolute;
-    bottom: 8px; /* Lowered closer to the bottom edge */
+    bottom: 8px; 
     left: 16px; 
     margin: 0;
     font-size: 1.1rem;
     font-weight: 700;
-    color: #d0d0d0;
+    color: rgba(255, 255, 255, 0.85);
     text-transform: lowercase;
     letter-spacing: -0.5px;
     text-shadow: 0 1px 2px rgba(0,0,0,0.8);
 }
 
-/* Static Monitor Controls */
 .monitor-controls {
     position: absolute;
-    bottom: 8px; /* Aligned vertically with the brand name */
+    bottom: 8px; 
     right: 16px;
     display: flex;
     gap: 12px;
-    color: #555; /* Subtle etched look, no glow */
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .nav-arrow {
@@ -125,7 +122,6 @@ body, html {
     height: 16px;
 }
 
-/* PC Monitor Stand */
 .monitor-stand {
     display: flex;
     flex-direction: column;
@@ -137,23 +133,24 @@ body, html {
 .stand-neck {
     width: 45px;
     height: 35px;
-    background: linear-gradient(to bottom, rgba(20, 20, 20, 0.5), rgba(10, 10, 10, 0.7));
+    background: transparent;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    border-left: 1px solid rgba(255, 255, 255, 0.05);
-    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    border-left: 1px solid rgba(255, 255, 255, 0.25);
+    border-right: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: inset 0 0 12px rgba(0,0,0,0.8);
 }
 
 .stand-base {
     width: 160px;
     height: 12px;
-    background: rgba(15, 15, 15, 0.4);
+    background: transparent;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 6px 6px 2px 2px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5), inset 0 0 12px rgba(0,0,0,0.8);
 }
 
 /* =========================================
@@ -171,32 +168,28 @@ body, html {
     align-items: center;
     justify-content: space-between;
     padding: 16px 20px;
-    
-    background: rgba(15, 15, 15, 0.4);
+    background: transparent;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    
     color: #e0e0e0;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 2px;
     font-size: 0.9rem;
-    
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 12px;
-    
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     position: relative;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3), inset 0 0 20px rgba(0,0,0,0.8);
 }
 
 .cyber-btn:hover {
-    background: rgba(30, 30, 30, 0.5);
-    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.03); 
+    border-color: rgba(255, 255, 255, 0.5);
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5), inset 0 0 20px rgba(0,0,0,0.6);
 }
 
 .led-panel {
@@ -229,15 +222,17 @@ body, html {
 
 .distrokid-placeholder {
     color: #666;
-    background: rgba(5, 5, 5, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
     cursor: not-allowed;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2), inset 0 0 20px rgba(0,0,0,0.9);
 }
 
 .distrokid-placeholder:hover {
-    background: rgba(5, 5, 5, 0.5);
+    background: transparent;
     transform: none;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    border-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2), inset 0 0 20px rgba(0,0,0,0.9);
+    border-color: rgba(255, 255, 255, 0.1);
 }
 
 .distrokid-placeholder .led.pwr {
