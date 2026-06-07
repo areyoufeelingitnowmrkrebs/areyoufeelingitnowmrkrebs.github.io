@@ -13,31 +13,59 @@
     <canvas id="c"></canvas>
     <div class="content-wrapper">
         <div class="profile-card" id="card">
-            <div class="pfp-container">
-                <img src="profile.jpg" onerror="this.onerror=null; this.src='https://placehold.co/300x300/1a1a1a/ff00ff?text=sigh,+whatever';" alt="sigh, whatever profile picture" class="pfp">
-            </div>
             
-            <h1 class="name glitch-fx" data-text="sigh, whatever">sigh, whatever</h1>
+            <div class="monitor-setup">
+                <div class="pc-monitor">
+                    <div class="screen-glass">
+                        <img src="profile.jpg" onerror="this.onerror=null; this.src='https://placehold.co/1920x1080/1a1a1a/ff00ff?text=sigh,+whatever';" alt="sigh, whatever profile picture" class="pfp">
+                    </div>
+                    <h1 class="brand-name">sigh, whatever</h1>
+                    <div class="monitor-controls">
+                        <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                        <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </div>
+                </div>
+                <div class="monitor-stand">
+                    <div class="stand-neck"></div>
+                    <div class="stand-base"></div>
+                </div>
+            </div>
             
             <div class="links-container">
                 <a href="#" class="cyber-btn distrokid-placeholder" onclick="event.preventDefault();">
-                    Music [STAY TUNED 💔]
+                    <span class="btn-label">Music</span>
+                    <div class="led-panel">
+                        <div class="led pwr"></div>
+                        <div class="led act"></div>
+                    </div>
                 </a>
                 
-                <a href="https://instagram.com/areyoufeelingitnowmrkrebs" target="_blank" class="cyber-btn glitch-fx" data-text="Instagram">
-                    Instagram
+                <a href="https://instagram.com/areyoufeelingitnowmrkrebs" target="_blank" class="cyber-btn">
+                    <span class="btn-label">Instagram</span>
+                    <div class="led-panel">
+                        <div class="led pwr"></div>
+                        <div class="led act" style="animation-delay: -0.2s"></div>
+                    </div>
                 </a>
                 
-                <a href="https://youtube.com/@areyoufeelingitnowmrkrebs" target="_blank" class="cyber-btn glitch-fx" data-text="YouTube">
-                    YouTube
-                </a>
-                
-                <a href="https://ngl.link/areyoufeelingitnowmrkrebs" target="_blank" class="cyber-btn glitch-fx" data-text="Ask me anything!">
-                    Ask me anything
+                <a href="https://ngl.link/areyoufeelingitnowmrkrebs" target="_blank" class="cyber-btn">
+                    <span class="btn-label">Ask me anything</span>
+                    <div class="led-panel">
+                        <div class="led pwr"></div>
+                        <div class="led act" style="animation-delay: -0.4s"></div>
+                    </div>
                 </a>
 
-                <a href="https://ko-fi.com/areyoufeelingitnowmrkrebs" target="_blank" class="cyber-btn glitch-fx" data-text="Donate">
-                    Donate
+                <a href="https://ko-fi.com/areyoufeelingitnowmrkrebs" target="_blank" class="cyber-btn">
+                    <span class="btn-label">Donate</span>
+                    <div class="led-panel">
+                        <div class="led pwr"></div>
+                        <div class="led act" style="animation-delay: -0.9s"></div>
+                    </div>
                 </a>
             </div>
         </div>
