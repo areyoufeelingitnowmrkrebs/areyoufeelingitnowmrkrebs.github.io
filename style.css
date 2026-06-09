@@ -75,7 +75,7 @@ body, html {
 .ticker-content {
     display: flex;
     white-space: nowrap;
-    animation: scroll-ticker 30s linear infinite;
+    animation: scroll-ticker 60s linear infinite;
     width: max-content;
 }
 

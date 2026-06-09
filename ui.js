@@ -1,4 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
+    	const tickerContent = document.getElementById('ticker-content');
+    	const baseText = "FUCK ICE // FREE PALESTINE // RELEASE THE FILES";
+    	function buildTicker() {
+        tickerContent.innerHTML = '';
+        const measure = document.createElement('span');
+        measure.className = 'ticker-text';
+        measure.textContent = baseText;
+        measure.style.visibility = 'hidden';
+        measure.style.position = 'absolute';
+        document.body.appendChild(measure);
+        const textWidth = measure.offsetWidth;
+        document.body.removeChild(measure);
+        const spansNeeded = Math.ceil(window.innerWidth / textWidth) + 1;
+        const totalSpans = spansNeeded * 2;
+        for (let i = 0; i < totalSpans; i++) {
+            const span = document.createElement('span');
+            span.className = 'ticker-text';
+            span.textContent = baseText;
+            tickerContent.appendChild(span);
+        }
+    }
+    buildTicker();
+    window.addEventListener('resize', buildTicker);
     const lines = document.querySelectorAll('.term-line');
     const prompt = document.querySelector('.term-prompt');
     const terminal = document.getElementById('terminal-screen');
