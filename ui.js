@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-    	const tickerContent = document.getElementById('ticker-content');
-    	const baseText = "FUCK ICE // FREE PALESTINE // RELEASE THE FILES";
-    	function buildTicker() {
+    const tickerContent = document.getElementById('ticker-content');
+    const baseText = tickerContent.querySelector('.ticker-text').textContent;
+    function buildTicker() {
         tickerContent.innerHTML = '';
         const measure = document.createElement('span');
         measure.className = 'ticker-text';
