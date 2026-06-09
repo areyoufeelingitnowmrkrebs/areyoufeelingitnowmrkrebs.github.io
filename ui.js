@@ -19,6 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
             span.textContent = baseText;
             tickerContent.appendChild(span);
         }
+        const pixelsPerSecond = 45;
+        const distanceToTravel = (textWidth * totalSpans) / 2;
+        const dynamicDuration = distanceToTravel / pixelsPerSecond;
+        tickerContent.style.animationDuration = `${dynamicDuration}s`;
     }
     buildTicker();
     window.addEventListener('resize', buildTicker);
@@ -36,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentLine = 0;
     function showNextLine() {
         if (currentLine === 0 && initLine.parentNode) {
-            initLine.remove(); 
+            initLine.remove();
         }
         if (currentLine < lines.length) {
             lines[currentLine].style.display = 'block';
@@ -46,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
             setTimeout(showNextLine, nextDelay);
         } else {
             prompt.style.display = 'flex';
-            prompt.appendChild(cursorEl); 
+            prompt.appendChild(cursorEl);
         }
     }
     setTimeout(showNextLine, 1500);
