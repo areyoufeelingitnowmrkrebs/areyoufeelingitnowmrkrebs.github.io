@@ -11,22 +11,26 @@
 </head>
 <body>
     <canvas id="c"></canvas>
+    <div class="system-ticker">
+        <div class="ticker-content">
+            <span class="ticker-text">FUCK ICE // FREE PALESTINE // RELEASE THE FILES</span>
+            <span class="ticker-text">FUCK ICE // FREE PALESTINE // RELEASE THE FILES</span>
+            <span class="ticker-text">FUCK ICE // FREE PALESTINE // RELEASE THE FILES</span>
+            <span class="ticker-text">FUCK ICE // FREE PALESTINE // RELEASE THE FILES</span>
+        </div>
+    </div>
     <div class="content-wrapper">
         <div class="profile-card" id="card">
-            
             <div class="monitor-setup">
                 <div class="pc-monitor">
-                    <div class="screen-glass">
-                        <img src="profile.jpg" onerror="this.onerror=null; this.src='https://placehold.co/1920x1080/1a1a1a/ff00ff?text=sigh,+whatever';" alt="sigh, whatever profile picture" class="pfp">
-                    </div>
-                    <h1 class="brand-name">sigh, whatever</h1>
-                    <div class="monitor-controls">
-                        <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="15 18 9 12 15 6"></polyline>
-                        </svg>
-                        <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg>
+                    <div class="screen-glass" id="terminal-screen">
+                        <div class="term-line">Independent artist</div>
+                        <div class="term-line">Networking student</div>
+                        <div class="term-line">Open source contributor</div>
+                        <div class="term-line">Elite Clone Hero player</div>
+                        <div class="term-prompt">
+                            <span class="prompt-text">sigh, whatever></span>
+                        </div>
                     </div>
                 </div>
                 <div class="monitor-stand">
@@ -34,7 +38,6 @@
                     <div class="stand-base"></div>
                 </div>
             </div>
-            
             <div class="links-container">
                 <a href="#" class="cyber-btn distrokid-placeholder" onclick="event.preventDefault();">
                     <span class="btn-label">Music</span>
@@ -43,33 +46,90 @@
                         <div class="led act"></div>
                     </div>
                 </a>
-                
+                <a href="https://github.com/areyoufeelingitnowmrkrebs" target="_blank" class="cyber-btn">
+                    <span class="btn-label">GitHub</span>
+                    <div class="led-panel">
+                        <div class="led pwr"></div>
+                        <div class="led act"></div>
+                    </div>
+                </a>
                 <a href="https://instagram.com/areyoufeelingitnowmrkrebs" target="_blank" class="cyber-btn">
                     <span class="btn-label">Instagram</span>
                     <div class="led-panel">
                         <div class="led pwr"></div>
-                        <div class="led act" style="animation-delay: -0.2s"></div>
+                        <div class="led act"></div>
                     </div>
                 </a>
-                
+                <a href="https://youtube.com/@areyoufeelingitnowmrkrebs" target="_blank" class="cyber-btn">
+                    <span class="btn-label">YouTube</span>
+                    <div class="led-panel">
+                        <div class="led pwr"></div>
+                        <div class="led act"></div>
+                    </div>
+                </a>
                 <a href="https://ngl.link/areyoufeelingitnowmrkrebs" target="_blank" class="cyber-btn">
                     <span class="btn-label">Ask me anything</span>
                     <div class="led-panel">
                         <div class="led pwr"></div>
-                        <div class="led act" style="animation-delay: -0.4s"></div>
+                        <div class="led act"></div>
                     </div>
                 </a>
-
                 <a href="https://ko-fi.com/areyoufeelingitnowmrkrebs" target="_blank" class="cyber-btn">
                     <span class="btn-label">Donate</span>
                     <div class="led-panel">
                         <div class="led pwr"></div>
-                        <div class="led act" style="animation-delay: -0.9s"></div>
+                        <div class="led act"></div>
                     </div>
                 </a>
             </div>
         </div>
     </div>
     <script src="background.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const lines = document.querySelectorAll('.term-line');
+            const prompt = document.querySelector('.term-prompt');
+            const terminal = document.getElementById('terminal-screen');
+            lines.forEach(l => l.style.display = 'none');
+            prompt.style.display = 'none';
+            const cursorEl = document.createElement('span');
+            cursorEl.className = 'cursor';
+            const initLine = document.createElement('div');
+            initLine.className = 'term-line';
+            initLine.appendChild(cursorEl);
+            terminal.insertBefore(initLine, terminal.firstChild);
+            let currentLine = 0;
+            function showNextLine() {
+                if (currentLine === 0 && initLine.parentNode) {
+                    initLine.remove(); 
+                }
+                if (currentLine < lines.length) {
+                    // Show line and append cursor to the end of it
+                    lines[currentLine].style.display = 'block';
+                    lines[currentLine].appendChild(cursorEl);
+                    currentLine++;
+                    let nextDelay = Math.floor(Math.random() * 1200) + 300;
+                    setTimeout(showNextLine, nextDelay);
+                } else {
+                    prompt.style.display = 'flex';
+                    prompt.appendChild(cursorEl); 
+                }
+            }
+            setTimeout(showNextLine, 1500);
+            const activeLeds = document.querySelectorAll('.cyber-btn:not(.distrokid-placeholder) .led.act');
+            function flickerLED(led) {
+                // Randomly toggle state
+                if (Math.random() > 0.4) {
+                    led.classList.add('on');
+                } else {
+                    led.classList.remove('on');
+                }
+                let pause = Math.random();
+                let nextTime = pause < 0.1 ? Math.random() * 1000 : Math.random() * 150;
+                setTimeout(() => flickerLED(led), nextTime);
+            }
+            activeLeds.forEach(led => flickerLED(led));
+        });
+    </script>
 </body>
 </html>
