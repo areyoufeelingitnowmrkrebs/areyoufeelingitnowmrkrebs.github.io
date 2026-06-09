@@ -119,13 +119,13 @@ line-height: 1.1;
 margin-bottom: 0px;
 }
 .term-prompt {
-color: #ffffff;
+color: #8ae234;
 font-size: 0.7rem;
 line-height: 1.1;
 margin-top: 8px;
 display: flex;
 align-items: center;
-font-weight: 800;
+font-weight: 1000;
 }
 .prompt-text {
 margin-right: 8px;
